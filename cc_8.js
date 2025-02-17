@@ -90,3 +90,14 @@ let cart = createCartTracker();
 console.log(cart(20)); // Should be $20
 console.log(cart(35)); // Should be $55 because adding on top of the 20
 
+//Task 8: Recursion in JavaScript
+//Scenario: Savings Growth Projection
+function calculateSavings(years, amount) {  //projects savings growth
+    if (years < 10) {
+        return calculateSavings(years + 1, amount * 1.05); //Each year increases savings by 5% until reaching year 10
+    }
+        return `Projected Savings: $${amount.toFixed(2)}`; //fixed to 2 decimal places
+};
+
+console.log(calculateSavings(8, 1000)); // Should be  $1102.50
+console.log(calculateSavings(5, 5000)); // Should be $6381.41
